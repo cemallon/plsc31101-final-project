@@ -6,15 +6,9 @@ Give a short, 1-2 paragraph description of your project. Focus on the code, not 
 
 ## Dependencies
 
-List what software your code depends on, as well as version numbers, like so:.
-
 1. R, 3.6.1
 
-In your scripts, includes commands that `require()` packages.
-
 ## Files
-
-List all files (other than `README.md` and `Final-Project.RProj`) contained in the repo, along with a brief description of each one, like so:
 
 #### /
 
@@ -23,26 +17,42 @@ List all files (other than `README.md` and `Final-Project.RProj`) contained in t
 3. Slides.XXX: Your lightning talk slides, in whatever format you prefer.
 
 #### Code/
-1. 01_collect-nyt.R: Collects data from New York Times API and exports data to the file nyt.csv
-2. 02_merge-data.R: Loads, cleans, and merges the raw Polity and NYT datasets into the Analysis Dataset.
-3. 03_analysis.R: Conducts descriptive analysis of the data, producing the tables and visualizations found in the Results directory.
+1. 01-AmnestyDF.R: Collects data from Amnesty International search results for "Asylum" and exports data to the file Amnesty_International_Asylum.csv.
+2. 02-AmnestyTidy.R: Loads and cleans the raw dataset.
+3. 03-Amnestyanalysis.R: Creates a dataset of all the words used. Conducts descriptive analysis of the data, producing the visualizations found in the Results directory.
 
 #### Data/
 
-1. polity.csv: The PolityVI dataset, available here: http://www.systemicpeace.org/inscrdata.html
-2. nyt.csv: Contains data from the New York Times API collected via collect-nyt.ipynb . Includes information on all articles containing the term "Programmer Cat", 1980-2010.
-3. analysis-dataset.csv: The final Analysis Dataset derived from the raw data above. It includes country-year values for all UN countries 1980-2010, with observations for the following variables: 
-    - *ccode*: Correlates of War numeric code for country observation
-    - *year*: Year of observation
-    - *polity*: PolityVI score
-    - *nyt*: Number of New York Times articles about "Programmer Cat"
+1. Amnesty_International_Asylum.csv: The dataset constructed from scraping Amnesty International's search results for Amnesty. 
+Link: https://www.amnesty.org/en/latest/news/?contentType=2561&issue=1613&sort=date&p=7
+The dataset includes observations for the following variables: 
+    - *Date*: Year the article was published. 
+    - *Region*: Region the article focuses on. 
+    - *Title*: Title of the Amnesty International article.
+    - *Text*: Text of the Amnesty International articles. 
+2. Amnesty_International_Asylum_CLEAN.csv: The cleaned dataset. Removes all NAs from the dataset and collapses the Region column into more inclusive categories. 
+    - *Date*: Year the article was published. 
+    - *Region*: Region the article focuses on.
+    - *Title*: Title of the Amnesty International article.
+    - *Text*: Text of the Amnesty International articles. 
+3.Amnesty_International_Asylum_Text_Analysis.csv: The dataset used for text analysis of the articles. 
+    - *Date*: Year the article was published. 
+    - *Region*: Region the article focuses on.
+    - *Title*: Title of the Amnesty International article.
+    - *Text*: Text of the Amnesty International articles. 
+    - *Score*: The positive or negative score of the words used in the                articles. 
 
 #### Results/
 
-1. coverage-over-time.jpeg: Graphs the number of articles about each region over time.
-2. regression-table.txt: Summarizes the results of OLS regression, modelling *nyt* on a number of covariates.
+1. Wordcloud_Overall.png: A wordcloud of the most frequently used words in Amnesty International articles on asylum.
+2. Average Sentiment Scores Over Time.png: A line graph showing how the sentiment score by region has changed from 2016-2019. 
 
 ## More Information
 
-Include any other details you think your user might need to reproduce your results. You may also include other information such as your contact information, credits, etc.
+Contact Information:
+cemallon@uchicago.edu
+
+Citations: 
+Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.
+Terman, Rochelle (2019). "PLSC 31101: Computational Tools for Social Science" 
 
