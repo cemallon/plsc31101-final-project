@@ -15,7 +15,7 @@ In Code 03 the data is processed for text analysis using the 'bing' sentiment di
 
 1. Narrative.Rmd: Provides a narrative of the project, main challenges, solutions, and results.
 2. Narrative.pdf: A knitted pdf of 00_Narrative.Rmd. 
-3. AsylumSlides: Presentation slides discussing the process and results of the project.
+3. AsylumSlides.pptx: Presentation slides discussing the process and results of the project.
 
 #### Code
 1. 01-AmnestyDF.R: Collects data from Amnesty International search results for "Asylum" and exports data to the file Amnesty_International_Asylum.csv.
@@ -47,9 +47,11 @@ The dataset includes observations for the following variables:
 
 1. Wordcloud_Overall.png: A wordcloud of the most frequently used words in Amnesty International articles on asylum.
 2. Average Sentiment Scores Over Time.png: A line graph showing how the sentiment score by region has changed from 2015-2019. 
-3. regression-table.txt: The regression results of the three models showing the effects of region and date on the score of an article. 
-4. Average Sentiment Scores by Region Overall.png: An column plot showing the mean sentiment scores by region overall. 
-5. Multiple_Charts.png: A file diaplaying numerous column plots showing the mean sentiment scores by region per year. 
+3. Average Sentiment Scores by Region Overall.png: An column plot showing the mean sentiment scores by region overall. 
+4. Multiple_Charts.png: A file diaplaying numerous column plots showing the mean sentiment scores by region per year. 
+5. regression-table.txt: The regression results of the three models showing the effects of region and date on the score of an article. 
+6. regression-table.pdf: The regression results of the three models showing the effects of region and date on the score of an article; in pdf format.
+
 
 ## More Information
 
