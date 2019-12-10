@@ -1,5 +1,11 @@
 ## This file tidies the csv file created in 01
 ## Setting up: 
+require(tidyverse)
+require(dplyr)
+require(rvest)
+require(stringr)
+require(purrr)
+require(lubridate)
 Asylum<- read.csv(file="/Users/cemallon/Documents/Computational-Tools/plsc31101-final-project/Data/Amenesty_International_Asylum.csv",stringsAsFactors = FALSE)
 
 #filter out all the NAs
@@ -23,12 +29,12 @@ Asylum_Tidy<-Asylum_Title%>%
 #Next I need to manually collapse the regions
 #For some reason, Amnesty International doesn't stick to regions
 #In a few cases they list specific countries
-#I'll continue to keep the US, Turkey, Afghanistan, and Russia left as separate entities
+#I'll continue to keep the Turkey, Afghanistan, and Russia left as separate entities
 #Miscoding on the original site for two articles, marked the regions as Refugees and Detention
 #Recoded to Europe
 
 Region_clean<- recode(Asylum_Tidy$Region,"Burundi"="Africa", "Congo"="Africa", "Kenya"="Africa", "Eritrea"="Africa",
-                         "Libya"="MENA","Middle East and North Africa"= "MENA",
+                         "Libya"="Middle East and North Africa","Middle East and North Africa " = "Middle East and North Africa",
                          "Hungary"= "Europe and Central Asia", "Spain"="Europe and Central Asia", 
                          "France"="Europe and Central Asia","Greece"="Europe and Central Asia","Italy"="Europe and Central Asia",
                          "Ecuador"="Americas","Venezuela"="Americas", "Cuba"="Americas",
